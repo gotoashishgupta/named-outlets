@@ -29,6 +29,6 @@ export class SpeakersListComponent implements OnInit {
 
   showBio(id: number) {
     this.selectedSpeaker = id;
-    this.router.navigate(['/speakers', {outlets: {'bio': [id]}}]);
+    this.router.navigate([{ outlets: { 'list': ['speakersList'], 'bio': [id] } }], { relativeTo: this.route.parent });
   }
 }
